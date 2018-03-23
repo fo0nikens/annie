@@ -19,6 +19,7 @@ func init() {
 	flag.StringVar(&config.Refer, "r", "", "Use specified Referrer")
 	flag.StringVar(&config.Proxy, "x", "", "HTTP proxy")
 	flag.StringVar(&config.Socks5Proxy, "s", "", "SOCKS5 proxy")
+	flag.StringVar(&config.Format, "f", "", "select specified format to download")
 }
 
 func main() {
@@ -45,24 +46,24 @@ func main() {
 	switch domain {
 	case "douyin":
 		extractors.Douyin(videoURL)
-	case "bilibili":
-		extractors.Bilibili(videoURL)
+	// case "bilibili":
+	// 	extractors.Bilibili(videoURL)
 	case "bcy":
 		extractors.Bcy(videoURL)
-	case "pixivision":
-		extractors.Pixivision(videoURL)
-	case "youku":
-		extractors.Youku(videoURL)
-	case "youtube", "youtu": // youtu.be
-		extractors.Youtube(videoURL)
-	case "iqiyi":
-		extractors.Iqiyi(videoURL)
-	case "mgtv":
-		extractors.Mgtv(videoURL)
-	case "tumblr":
-		extractors.Tumblr(videoURL)
-	case "vimeo":
-		extractors.Vimeo(videoURL)
+	// case "pixivision":
+	// 	extractors.Pixivision(videoURL)
+	// case "youku":
+	// 	extractors.Youku(videoURL)
+	// case "youtube", "youtu": // youtu.be
+	// 	extractors.Youtube(videoURL)
+	// case "iqiyi":
+	// 	extractors.Iqiyi(videoURL)
+	// case "mgtv":
+	// 	extractors.Mgtv(videoURL)
+	// case "tumblr":
+	// 	extractors.Tumblr(videoURL)
+	// case "vimeo":
+	// 	extractors.Vimeo(videoURL)
 	default:
 		extractors.Universal(videoURL)
 	}
